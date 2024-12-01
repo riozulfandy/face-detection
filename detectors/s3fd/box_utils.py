@@ -126,7 +126,7 @@ def nms(boxes, scores, overlap=0.5, top_k=200):
     return keep, count
 
 
-class Detect(Function):
+class Detect(object):
 
     def __init__(self, num_classes=2,
                     top_k=750, nms_thresh=0.3, conf_thresh=0.05,
