@@ -165,7 +165,7 @@ class S3FDNet(nn.Module):
             self.priorbox = PriorBox(size, features_maps)
             self.priors = self.priorbox.forward()
 
-        output = self.detect(
+        output = self.detect.forward(
             loc.view(loc.size(0), -1, 4),
             self.softmax(conf.view(conf.size(0), -1, 2)),
             self.priors.type(type(x.data)).to(self.device)
